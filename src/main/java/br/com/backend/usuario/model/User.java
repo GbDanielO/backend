@@ -26,6 +26,10 @@ public class User implements Serializable {
     public User() {
     }
 
+    public User( Long id ) {
+        this.id = id;
+    }
+
     public User( String nome, String email, String cpf, String site, EnumSexo enumSexo, String profissao ) {
         super();
         this.nome = nome;

@@ -24,30 +24,34 @@ public class Selecao implements Serializable {
 
     private List<User> lstParticipantes;
 
-    private Local local;
+    private List<Local> lstLocais;
 
     public Selecao() {
     }
 
+    public Selecao( Long id ) {
+        this.id = id;
+    }
+
     public Selecao( User usuarioRealizador, LocalDate datInicio, LocalDate dataFim,
-            List<User> lstParticipantes, Local local ) {
+            List<User> lstParticipantes, List<Local> lstLocais ) {
         super();
         this.usuarioRealizador = usuarioRealizador;
         this.datInicio = datInicio;
         this.dataFim = dataFim;
         this.lstParticipantes = lstParticipantes;
-        this.local = local;
+        this.lstLocais = lstLocais;
     }
 
     public Selecao( Long id, User usuarioRealizador, LocalDate datInicio, LocalDate dataFim,
-            List<User> lstParticipantes, Local local ) {
+            List<User> lstParticipantes, List<Local> lstLocais ) {
         super();
         this.id = id;
         this.usuarioRealizador = usuarioRealizador;
         this.datInicio = datInicio;
         this.dataFim = dataFim;
         this.lstParticipantes = lstParticipantes;
-        this.local = local;
+        this.lstLocais = lstLocais;
     }
 
     public Long getId() {
@@ -90,16 +94,12 @@ public class Selecao implements Serializable {
         this.lstParticipantes = lstParticipantes;
     }
 
-    public Local getLocal() {
-        return local;
+    public List<Local> getLstLocais() {
+        return lstLocais;
     }
 
-    public void setLocal( Local local ) {
-        this.local = local;
-    }
-
-    public static long getSerialversionuid() {
-        return serialVersionUID;
+    public void setLstLocais( List<Local> lstLocais ) {
+        this.lstLocais = lstLocais;
     }
 
     @Override

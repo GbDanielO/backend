@@ -21,6 +21,10 @@ public class Local implements Serializable {
 
     private String telefone;
 
+    public Local( Long id ) {
+        this.id = id;
+    }
+
     public Local() {
         super();
     }
