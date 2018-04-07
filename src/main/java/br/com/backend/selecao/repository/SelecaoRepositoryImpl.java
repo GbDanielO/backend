@@ -56,6 +56,70 @@ public class SelecaoRepositoryImpl implements SelecaoRepository {
 
     }
 
+    @Override
+    public User criarUsuario( Selecao selecao, User usuario ) {
+        for ( Selecao selecaoBD : lstSelecao ) {
+            if ( selecao.equals( selecaoBD ) ) {
+                usuario.setId( getId() );
+                selecaoBD.getLstParticipantes().add( usuario );
+            }
+        }
+        return usuario;
+    }
+
+    @Override
+    public Local criarLocal( Selecao selecao, Local local ) {
+        for ( Selecao selecaoBD : lstSelecao ) {
+            if ( selecao.equals( selecaoBD ) ) {
+                local.setId( getId() );
+                selecaoBD.getLstLocais().add( local );
+            }
+        }
+        return local;
+    }
+
+    @Override
+    public User atualizarUsuario( Selecao selecao, User usuario ) {
+        for ( Selecao selecaoBD : lstSelecao ) {
+            if ( selecao.equals( selecaoBD ) ) {
+                if ( selecaoBD.getLstParticipantes().remove( usuario ) ) {
+                    selecaoBD.getLstParticipantes().add( usuario );
+                }
+            }
+        }
+        return usuario;
+    }
+
+    @Override
+    public Local atualizarLocal( Selecao selecao, Local local ) {
+        for ( Selecao selecaoBD : lstSelecao ) {
+            if ( selecao.equals( selecaoBD ) ) {
+                if ( selecaoBD.getLstLocais().remove( local ) ) {
+                    selecaoBD.getLstLocais().add( local );
+                }
+            }
+        }
+        return local;
+    }
+
+    @Override
+    public void removerUsuario( Selecao selecao, User usuario ) {
+        for ( Selecao selecaoBD : lstSelecao ) {
+            if ( selecao.equals( selecaoBD ) ) {
+                selecaoBD.getLstParticipantes().remove( usuario );
+            }
+        }
+    }
+
+    @Override
+    public void removerLocal( Selecao selecao, Local local ) {
+        for ( Selecao selecaoBD : lstSelecao ) {
+            if ( selecao.equals( selecaoBD ) ) {
+                selecaoBD.getLstLocais().remove( local );
+            }
+        }
+    }
+
     private void montarEntidade() {
         if ( lstSelecao == null || lstSelecao.isEmpty() ) {
             User realizador = new User( getId(), "Antonio Astolfo Ramos da Silva", "11111111111", null, null,

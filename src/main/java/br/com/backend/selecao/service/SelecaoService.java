@@ -9,6 +9,7 @@ import br.com.backend.local.model.Local;
 import br.com.backend.selecao.model.Selecao;
 import br.com.backend.selecao.repository.SelecaoRepository;
 import br.com.backend.selecao.repository.SelecaoRepositoryImpl;
+import br.com.backend.usuario.model.User;
 
 @Service
 public class SelecaoService {
@@ -40,4 +41,39 @@ public class SelecaoService {
         }
     }
 
+    public User criarUsuario( Long id, User usuario ) {
+        Selecao selecao = getSelecaoById( id );
+
+        return selecaoRepository.criarUsuario( selecao, usuario );
+    }
+
+    public Local criarLocal( Long id, Local local ) {
+        Selecao selecao = getSelecaoById( id );
+
+        return selecaoRepository.criarLocal( selecao, local );
+    }
+
+    public User atualizarUsuario( Long id, User usuario ) {
+        Selecao selecao = getSelecaoById( id );
+
+        return selecaoRepository.atualizarUsuario( selecao, usuario );
+    }
+
+    public Local atualizarLocal( Long id, Local local ) {
+        Selecao selecao = getSelecaoById( id );
+
+        return selecaoRepository.atualizarLocal( selecao, local );
+    }
+
+    public void removerUsuario( Long id, User usuario ) {
+        Selecao selecao = getSelecaoById( id );
+
+        selecaoRepository.removerUsuario( selecao, usuario );
+    }
+
+    public void removerLocal( Long id, Local local ) {
+        Selecao selecao = getSelecaoById( id );
+
+        selecaoRepository.removerLocal( selecao, local );
+    }
 }
