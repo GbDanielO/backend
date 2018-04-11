@@ -19,6 +19,8 @@ public class User implements Serializable {
 
     private String site;
 
+    private Integer idade;
+
     private EnumSexo enumSexo;
 
     private String profissao;
@@ -30,21 +32,25 @@ public class User implements Serializable {
         this.id = id;
     }
 
-    public User( String nome, String email, String cpf, String site, EnumSexo enumSexo, String profissao ) {
+    public User( String nome, String email, Integer idade, String cpf, String site, EnumSexo enumSexo,
+            String profissao ) {
         super();
         this.nome = nome;
         this.email = email;
+        this.idade = idade;
         this.cpf = cpf;
         this.site = site;
         this.enumSexo = enumSexo;
         this.profissao = profissao;
     }
 
-    public User( Long id, String nome, String email, String cpf, String site, EnumSexo enumSexo, String profissao ) {
+    public User( Long id, String nome, String email, Integer idade, String cpf, String site, EnumSexo enumSexo,
+            String profissao ) {
         super();
         this.id = id;
         this.nome = nome;
         this.email = email;
+        this.idade = idade;
         this.cpf = cpf;
         this.site = site;
         this.enumSexo = enumSexo;
@@ -73,6 +79,14 @@ public class User implements Serializable {
 
     public void setEmail( String email ) {
         this.email = email;
+    }
+
+    public Integer getIdade() {
+        return idade;
+    }
+
+    public void setIdade( Integer idade ) {
+        this.idade = idade;
     }
 
     public String getCpf() {

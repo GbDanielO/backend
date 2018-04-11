@@ -122,21 +122,22 @@ public class SelecaoRepositoryImpl implements SelecaoRepository {
 
     private void montarEntidade() {
         if ( lstSelecao == null || lstSelecao.isEmpty() ) {
-            User realizador = new User( getId(), "Antonio Astolfo Ramos da Silva", "11111111111", null, null,
-                    EnumSexo.MASCULINO, null );
+            User realizador = new User( getId(), "Antonio Astolfo Ramos da Silva", "email@recrutador.com", 45,
+                    "11111111111", null, EnumSexo.MASCULINO, null );
             Local local = new Local( getId(), "Secretaria Regional IV", "Brasil", "Ceará", "Fortleza", "8534332800" );
             LocalDate datIni = LocalDate.of( 2018, Month.JANUARY, 1 );
             LocalDate datFim = LocalDate.of( 2018, Month.JANUARY, 1 );
 
             User participante1 =
-                    new User( getId(), "Astolfo Braga", "ab@hotmail.com", "22222222222", null, EnumSexo.MASCULINO,
+                    new User( getId(), "Astolfo Braga", "ab@hotmail.com", 35, "22222222222", null, EnumSexo.MASCULINO,
                             "Programador" );
             User participante2 =
-                    new User( getId(), "Yury Gagari da Silva", "ygs@hotmail.com", "33333333333", null,
+                    new User( getId(), "Yury Gagari da Silva", "ygs@hotmail.com", 40, "33333333333", null,
                             EnumSexo.MASCULINO,
                             "Analista" );
             User participante3 =
-                    new User( getId(), "Cristiane Torlon", "ct@hotmail.com", "44444444444", null, EnumSexo.MASCULINO,
+                    new User( getId(), "Cristiane Torlon", "ct@hotmail.com", 28, "44444444444", null,
+                            EnumSexo.MASCULINO,
                             "Analista" );
             List<User> lstParticipantes = new ArrayList<>();
             lstParticipantes.add( participante1 );
